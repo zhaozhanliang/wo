@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function CreatePerson(name,sex) {
+            this.name=name;
+            this.sex=sex;
+        }
+        CreatePerson.prototype.showName=function(){
+            alert(this.name)
+        };
+        // var p1 = new CreatePerson("小名","男");
+        // p1.showName();// 小名
+
+        function CreateStar(name,sex,job) {
+            // this.name=name;
+            // this.sex=sex;
+            // this.job=job;
+            CreatePerson.call(this,name,sex);
+            this.job=job;
+
+        }
+        extend(CreatePerson.prototype,CreateStar.prototype);
+        var s1 = new CreateStar("黄小名","男","演员");
+        s1.showName();
+        function extend(obj1,obj2) {
+            for (var attr in obj1){
+                obj2[attr] = obj1[attr]
+            }
+        }
+        /*var m = {x:20};
+        var n = {
+            x:30,
+            sum:function (y,z) {
+                console.log(this.x+y+z);
+            }
+        };
+        // n.sum.call(m,1,2); //把n中的this指向m
+        // n.sum.apply(m,[1,2]); //把n中的this指向m
+        // n.sum.bine(m,[1,2]); //把n中的this指向m
+        console.log(n.sum.call(m,1,2))()
+        // call apply 只是写法不同*/
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

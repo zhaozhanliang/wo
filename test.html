@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function CreatePerson(){
+            var obj = new Object();
+            obj.name = name;
+            obj.showName = function () {
+                alert("my name is"+this.name)
+            };
+            return obj
+        }
+        var p1 = CreatePerson("zhangsan");
+        var p2 = CreatePerson("lisi");
+        p1.showName();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

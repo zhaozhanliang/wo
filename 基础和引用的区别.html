@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*var a = [1,2,3];
+        var b = a;
+        b.push(4);
+        console.log(a);*/
+
+        var p1 = {
+            name:"张三"
+        };
+        for(var attr in p1){
+                //attr是p1的
+            alert(attr+":"+p1[attr])
+        }
+        //实现对象的赋值，如何clone一个对象，如何深度clone一个对象
+        // var p2 = p1;
+        // p2.name = "李四";
+        // console.log(p1.name)；
+
+        // for .. in
+        /**/
+        function extend(obj1,obj2) {
+            for(var attr in obj1){
+                obj2[attr] = obj1[attr]
+            }
+        }
+        extend(p1,p2);
+        alert(p2,name);
+        p2.name = "lisi";
+        alert(p1.name)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
